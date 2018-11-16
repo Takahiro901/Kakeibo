@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XF_KakeiboApp.EditPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="保存"
+                     Clicked="SaveClicked" />
+        <ToolbarItem Text="削除"
+                     Clicked="DeleteClicked"
+                     IsDestructive="true" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="日付" />
+                    <DatePicker WidthRequest="100" x:Name="date" Date="{Binding Date}" HorizontalOptions="FillAndExpand" Format="yyy/MM/dd"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="費目" />
+                    <Picker  WidthRequest="100" x:Name="kind" HorizontalOptions="FillAndExpand" SelectedIndex="{Binding HimokuPicker}" SelectedItem="{Binding Himoku}"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="メモ" />
+                <Entry  HorizontalOptions="FillAndExpand" x:Name="memo" Text="{Binding Memo}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="金額" />
+                <Entry  HorizontalOptions="FillAndExpand" x:Name="price" Text="{Binding Price}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:XF_KakeiboApp" x:Class="XF_KakeiboApp.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="全削除"
+                     Clicked="AllDel" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="日付" />
+                <DatePicker WidthRequest="100" x:Name="date" HorizontalOptions="FillAndExpand" Format="yyy/MM/dd"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="費目" />
+                <Picker  WidthRequest="100" x:Name="kind" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="メモ" />
+            <Entry  HorizontalOptions="FillAndExpand" x:Name="memo" Text="test"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="金額" />
+            <Entry  HorizontalOptions="FillAndExpand" x:Name="price" Text="100"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+                <Button Text="追加" x:Name="Add" Clicked="AddClicked" HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+        
+        
+        <Label Text="データ一覧" BackgroundColor="Silver" HorizontalTextAlignment="Center"/>
+        <ListView x:Name="listview" ItemTapped="listviewTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Date, StringFormat='{0:yyy/MM/dd}'}" HorizontalOptions="FillAndExpand"/>
+                            <Label Text="{Binding Himoku}" HorizontalOptions="FillAndExpand"/>
+                            <Label Text="{Binding Price}" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
