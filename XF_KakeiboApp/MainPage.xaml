@@ -27,7 +27,6 @@
                 <Button Text="追加" x:Name="Add" Clicked="AddClicked" HorizontalOptions="CenterAndExpand" />
         </StackLayout>
         
-        
         <Label Text="データ一覧" BackgroundColor="Silver" HorizontalTextAlignment="Center"/>
         <ListView x:Name="listview" ItemTapped="listviewTapped">
             <ListView.ItemTemplate>
