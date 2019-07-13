@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XF_KakeiboApp.EditPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="保存"
-                     Clicked="SaveClicked" />
         <ToolbarItem Text="削除"
                      Clicked="DeleteClicked"
                      IsDestructive="true" />
@@ -27,6 +25,8 @@
                 <Label Text="金額" />
                 <Entry  HorizontalOptions="FillAndExpand" x:Name="price" Text="{Binding Price}"/>
             </StackLayout>
+            <Button Text="保存"
+                    Clicked="SaveClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

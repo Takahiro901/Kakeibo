@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XF_KakeiboApp.UITests", "XF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XF_KakeiboApp", "XF_KakeiboApp\XF_KakeiboApp.csproj", "{2808D83C-2E13-4D3A-B62A-2E2814D47297}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XF_KakeiboAppTest", "XF_KakeiboAppTest\XF_KakeiboAppTest.csproj", "{67BDBCAB-16D9-4275-8422-E04A0C035394}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,5 +87,21 @@ Global
 		{2808D83C-2E13-4D3A-B62A-2E2814D47297}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
 		{2808D83C-2E13-4D3A-B62A-2E2814D47297}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
 		{2808D83C-2E13-4D3A-B62A-2E2814D47297}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.Release|iPhone.Build.0 = Release|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{67BDBCAB-16D9-4275-8422-E04A0C035394}.AppStore|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

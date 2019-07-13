@@ -10,6 +10,6 @@ namespace XF_KakeiboApp.Models
         public string Himoku { get; set; }
         public int HimokuPicker { get; set; }
         public string Memo { get; set; }
-        public string Price { get; set; }
+        public int Price { get; set; }
     }
 }

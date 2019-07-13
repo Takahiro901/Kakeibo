@@ -12,7 +12,7 @@ namespace XF_KakeiboApp
             InitializeComponent();
 
             BindingContext = wItem;
-            kind.ItemsSource = MainPage.list;
+            kind.ItemsSource = Kind.list;
             kind.SelectedIndex = wItem.HimokuPicker;
         }
 

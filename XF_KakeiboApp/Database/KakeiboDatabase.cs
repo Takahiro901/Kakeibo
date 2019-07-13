@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using SQLite;
 using XF_KakeiboApp.Models;
 using System.Collections.ObjectModel;
-
+using System.Linq;
 
 namespace XF_KakeiboApp.Database
 {
@@ -21,6 +21,13 @@ namespace XF_KakeiboApp.Database
         public Task<List<Kakeibo>> GetItemsAsync()
         {
             return database.Table<Kakeibo>().ToListAsync();
+        }
+
+        public async Task<int> GetSumAsync()
+        {
+            var list = await database.QueryAsync<Kakeibo>("SELECT Price FROM Kakeibo");
+            int sum = list.Sum(x => x.Price);
+            return sum;
         }
 
         public Task<int> SaveItemAsync(Kakeibo kakeibo)

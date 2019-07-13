@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:XF_KakeiboApp" x:Class="XF_KakeiboApp.MainPage">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:XF_KakeiboApp" 
+             x:Class="XF_KakeiboApp.MainPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="全削除"
                      Clicked="AllDel" />
@@ -24,7 +27,9 @@
             <Entry  HorizontalOptions="FillAndExpand" x:Name="price" Text="100"/>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
-                <Button Text="追加" x:Name="Add" Clicked="AddClicked" HorizontalOptions="CenterAndExpand" />
+            <Button Text="追加" x:Name="Add" Clicked="AddClicked" HorizontalOptions="Start" />
+            <Label Text="合計:" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand"/>
+            <Label x:Name="Sum" VerticalTextAlignment="Center" />
         </StackLayout>
         
         <Label Text="データ一覧" BackgroundColor="Silver" HorizontalTextAlignment="Center"/>

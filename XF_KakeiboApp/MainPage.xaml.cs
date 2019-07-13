@@ -7,40 +7,39 @@ namespace XF_KakeiboApp
 {
     public partial class MainPage : ContentPage
     {
-        public static List<string> list = new List<string>
-        {
-            "食費", "医療","美容院","交通費","勉強","生活費","交際費","趣味"
-        };
-
-
         public MainPage()
         {
             InitializeComponent();
 
-            kind.ItemsSource = list;
+            kind.ItemsSource = Kind.list;
             kind.SelectedIndex = 0;
         }
 
         protected override async void OnAppearing()
         {
             listview.ItemsSource = await App.Database.GetItemsAsync();
+            var sum = await App.Database.GetSumAsync();
+            Sum.Text = sum.ToString();
         }
 
         async void AddClicked(object sender, EventArgs e)
         {
-             var item = new Kakeibo 
-            { 
-                Date = date.Date, 
+            var item = new Kakeibo
+            {
+                Date = date.Date,
                 Himoku = (string)kind.SelectedItem,
-                HimokuPicker = kind.SelectedIndex, 
-                Memo = memo.Text, 
-                Price = price.Text 
+                HimokuPicker = kind.SelectedIndex,
+                Memo = memo.Text,
+                Price = int.Parse(price.Text), 
             };
             await App.Database.SaveItemAsync(item);
             listview.ItemsSource = await App.Database.GetItemsAsync();
             kind.SelectedItem = null;
             memo.Text = "";
             price.Text = "";
+
+            var sum = await App.Database.GetSumAsync();
+            Sum.Text = sum.ToString();
         }
 
         async void listviewTapped(object sender, ItemTappedEventArgs e)
