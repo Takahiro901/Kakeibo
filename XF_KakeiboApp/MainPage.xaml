@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:XF_KakeiboApp" 
-             x:Class="XF_KakeiboApp.MainPage">
+             x:Class="XF_KakeiboApp.MainPage"
+             Appearing="Handle_Appearing">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="全削除"
                      Clicked="AllDel" />
@@ -10,20 +11,20 @@
     <StackLayout>
         <StackLayout Orientation="Horizontal">
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <Label Text="日付" />
+                <Label Text="日付" VerticalTextAlignment="Center"/>
                 <DatePicker WidthRequest="100" x:Name="date" HorizontalOptions="FillAndExpand" Format="yyy/MM/dd"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <Label Text="費目" />
+                <Label Text="費目" VerticalTextAlignment="Center"/>
                 <Picker  WidthRequest="100" x:Name="kind" HorizontalOptions="FillAndExpand" />
             </StackLayout>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
-            <Label Text="メモ" />
+            <Label Text="メモ" VerticalTextAlignment="Center"/>
             <Entry  HorizontalOptions="FillAndExpand" x:Name="memo" Text="test"/>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
-            <Label Text="金額" />
+            <Label Text="金額" VerticalTextAlignment="Center"/>
             <Entry  HorizontalOptions="FillAndExpand" x:Name="price" Text="100"/>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
@@ -32,7 +33,7 @@
             <Label x:Name="Sum" VerticalTextAlignment="Center" />
         </StackLayout>
         
-        <Label Text="データ一覧" BackgroundColor="Silver" HorizontalTextAlignment="Center"/>
+        <Label Text="データ一覧" BackgroundColor="Silver"  HorizontalTextAlignment="Center"/>
         <ListView x:Name="listview" ItemTapped="listviewTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>

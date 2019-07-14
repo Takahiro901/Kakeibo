@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using XF_KakeiboApp.Models;
 
@@ -15,9 +16,14 @@ namespace XF_KakeiboApp
             kind.SelectedIndex = 0;
         }
 
-        protected override async void OnAppearing()
+        async void Handle_Appearing(object sender, EventArgs e)
         {
             listview.ItemsSource = await App.Database.GetItemsAsync();
+            await SumSet();
+        }
+
+        async Task SumSet()
+        {
             var sum = await App.Database.GetSumAsync();
             Sum.Text = sum.ToString();
         }
@@ -38,8 +44,7 @@ namespace XF_KakeiboApp
             memo.Text = "";
             price.Text = "";
 
-            var sum = await App.Database.GetSumAsync();
-            Sum.Text = sum.ToString();
+            await SumSet();
         }
 
         async void listviewTapped(object sender, ItemTappedEventArgs e)
