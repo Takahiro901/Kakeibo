@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:XF_KakeiboApp" 
              x:Class="XF_KakeiboApp.MainPage"
              Appearing="Handle_Appearing">
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="全削除"
                      Clicked="AllDel" />
