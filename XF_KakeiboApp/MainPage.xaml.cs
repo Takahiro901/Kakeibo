@@ -18,7 +18,9 @@ namespace XF_KakeiboApp
 
         async void Handle_Appearing(object sender, EventArgs e)
         {
-            listview.ItemsSource = await App.Database.GetItemsAsync();
+            //listview.ItemsSource = await App.Database.GetItemsAsync();
+            mainPageViewModel.listItems = await App.Database.GetItemsAsync();
+            listview.ItemsSource = mainPageViewModel.listItems;
             await SumSet();
         }
 

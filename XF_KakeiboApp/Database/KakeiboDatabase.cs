@@ -18,9 +18,11 @@ namespace XF_KakeiboApp.Database
             database.CreateTableAsync<Kakeibo>().Wait();
         }
 
-        public Task<List<Kakeibo>> GetItemsAsync()
+        public async Task<ObservableCollection<Kakeibo>> GetItemsAsync()
         {
-            return database.Table<Kakeibo>().ToListAsync();
+            var tableList =await database.Table<Kakeibo>().ToListAsync();
+            ObservableCollection<Kakeibo> kakeibos = new ObservableCollection<Kakeibo>(tableList);
+            return kakeibos;
         }
 
         public async Task<int> GetSumAsync()

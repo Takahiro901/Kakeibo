@@ -5,7 +5,7 @@
              x:Class="XF_KakeiboApp.MainPage"
              Appearing="Handle_Appearing">
     <ContentPage.BindingContext>
-        <local:MainPageViewModel/>
+        <local:MainPageViewModel x:Name="mainPageViewModel"/>
     </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="全削除"
@@ -37,7 +37,7 @@
         </StackLayout>
         
         <Label Text="データ一覧" BackgroundColor="Silver"  HorizontalTextAlignment="Center"/>
-        <ListView x:Name="listview" ItemTapped="listviewTapped">
+        <ListView x:Name="listview" ItemTapped="listviewTapped" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
