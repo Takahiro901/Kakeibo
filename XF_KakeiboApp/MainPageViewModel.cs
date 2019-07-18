@@ -15,7 +15,5 @@ namespace XF_KakeiboApp
         {
             
         }
-
-        public ObservableCollection<Kakeibo> listItems { get; set; }
     }
 }

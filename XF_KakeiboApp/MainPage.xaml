@@ -28,7 +28,7 @@
         </StackLayout>
         <StackLayout Orientation="Horizontal">
             <Label Text="金額" VerticalTextAlignment="Center"/>
-            <Entry  HorizontalOptions="FillAndExpand" x:Name="price" Text="100"/>
+            <Entry  HorizontalOptions="FillAndExpand" x:Name="price" Text="100" Keyboard="Numeric"/>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
             <Button Text="追加" x:Name="Add" Clicked="AddClicked" HorizontalOptions="Start" />
