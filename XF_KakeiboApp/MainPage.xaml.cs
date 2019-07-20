@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using XF_KakeiboApp.Models;
@@ -11,9 +12,6 @@ namespace XF_KakeiboApp
         public MainPage()
         {
             InitializeComponent();
-
-            kind.ItemsSource = Kind.list;
-            kind.SelectedIndex = 0;
         }
 
         async void Handle_Appearing(object sender, EventArgs e)

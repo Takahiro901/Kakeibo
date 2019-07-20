@@ -19,7 +19,9 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <Label Text="費目" VerticalTextAlignment="Center"/>
-                <Picker  WidthRequest="100" x:Name="kind" HorizontalOptions="FillAndExpand" />
+                <Picker  WidthRequest="100" x:Name="kind" HorizontalOptions="FillAndExpand"
+                         ItemsSource="{Binding Kindlist}" 
+                         SelectedIndex="{Binding Index}"/>
             </StackLayout>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
