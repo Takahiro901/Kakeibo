@@ -18,6 +18,20 @@ namespace XF_KakeiboApp
 
         public List<string> Kindlist { get { return Kind.list; } }
 
+        private ObservableCollection<Kakeibo> _kakeibos;
+        public ObservableCollection<Kakeibo> Kakeibos
+        {
+            get { return _kakeibos; }
+            set
+            {
+                if (_kakeibos != value)
+                {
+                    _kakeibos = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Kakeibos)));
+                }
+            }
+        }
+
         private int index;
         public int Index
         {

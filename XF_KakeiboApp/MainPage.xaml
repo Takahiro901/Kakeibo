@@ -39,7 +39,7 @@
         </StackLayout>
         
         <Label Text="データ一覧" BackgroundColor="Silver"  HorizontalTextAlignment="Center"/>
-        <ListView x:Name="listview" ItemTapped="listviewTapped" >
+        <ListView x:Name="listview" ItemTapped="listviewTapped" ItemsSource="{Binding Kakeibos}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

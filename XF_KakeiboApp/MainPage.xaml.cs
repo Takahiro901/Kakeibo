@@ -16,7 +16,7 @@ namespace XF_KakeiboApp
 
         async void Handle_Appearing(object sender, EventArgs e)
         {
-            listview.ItemsSource = await App.Database.GetItemsAsync();
+            mainPageViewModel.Kakeibos = await App.Database.GetItemsAsync();
             await SumSet();
         }
 
@@ -37,7 +37,7 @@ namespace XF_KakeiboApp
                 Price = int.Parse(price.Text), 
             };
             await App.Database.SaveItemAsync(item);
-            listview.ItemsSource = await App.Database.GetItemsAsync();
+            mainPageViewModel.Kakeibos = await App.Database.GetItemsAsync();
             kind.SelectedItem = null;
             memo.Text = "";
             price.Text = "";
