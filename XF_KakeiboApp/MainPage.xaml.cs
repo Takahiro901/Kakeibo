@@ -17,33 +17,33 @@ namespace XF_KakeiboApp
         async void Handle_Appearing(object sender, EventArgs e)
         {
             mainPageViewModel.Kakeibos = await App.Database.GetItemsAsync();
-            await SumSet();
+            await mainPageViewModel.SumSet();
         }
 
-        async Task SumSet()
-        {
-            var sum = await App.Database.GetSumAsync();
-            Sum.Text = sum.ToString();
-        }
+        //async Task SumSet()
+        //{
+        //    var sum = await App.Database.GetSumAsync();
+        //    Sum.Text = sum.ToString();
+        //}
 
-        async void AddClicked(object sender, EventArgs e)
-        {
-            var item = new Kakeibo
-            {
-                Date = date.Date,
-                Himoku = (string)kind.SelectedItem,
-                HimokuPicker = kind.SelectedIndex,
-                Memo = memo.Text,
-                Price = int.Parse(price.Text), 
-            };
-            await App.Database.SaveItemAsync(item);
-            mainPageViewModel.Kakeibos = await App.Database.GetItemsAsync();
-            kind.SelectedItem = null;
-            memo.Text = "";
-            price.Text = "";
+        //async void AddClicked(object sender, EventArgs e)
+        //{
+        //    var item = new Kakeibo
+        //    {
+        //        Date = date.Date,
+        //        Himoku = (string)kind.SelectedItem,
+        //        HimokuPicker = kind.SelectedIndex,
+        //        Memo = memo.Text,
+        //        Price = int.Parse(price.Text), 
+        //    };
+        //    await App.Database.SaveItemAsync(item);
+        //    mainPageViewModel.Kakeibos = await App.Database.GetItemsAsync();
+        //    kind.SelectedItem = null;
+        //    memo.Text = "";
+        //    price.Text = "";
 
-            await SumSet();
-        }
+        //    await SumSet();
+        //}
 
         async void listviewTapped(object sender, ItemTappedEventArgs e)
         {
@@ -53,8 +53,7 @@ namespace XF_KakeiboApp
 
         async void AllDel(object sender, EventArgs e)
         {
-            await App.Database.DeleteAllItemsAsync();
-            listview.ItemsSource = await App.Database.GetItemsAsync();
+            mainPageViewModel.Kakeibos = await App.Database.GetItemsAsync();
         }
     }
 }

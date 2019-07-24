@@ -15,27 +15,28 @@
         <StackLayout Orientation="Horizontal">
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <Label Text="日付" VerticalTextAlignment="Center"/>
-                <DatePicker WidthRequest="100" x:Name="date" HorizontalOptions="FillAndExpand" Format="yyy/MM/dd"/>
+                <DatePicker WidthRequest="100" x:Name="date" Date="{Binding Date}" HorizontalOptions="FillAndExpand" Format="yyy/MM/dd"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <Label Text="費目" VerticalTextAlignment="Center"/>
                 <Picker  WidthRequest="100" x:Name="kind" HorizontalOptions="FillAndExpand"
                          ItemsSource="{Binding Kindlist}" 
-                         SelectedIndex="{Binding Index}"/>
+                         SelectedIndex="{Binding Index}"
+                         SelectedItem="{Binding SelectedItem}"/>
             </StackLayout>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
             <Label Text="メモ" VerticalTextAlignment="Center"/>
-            <Entry  HorizontalOptions="FillAndExpand" x:Name="memo" Text="test"/>
+            <Entry  HorizontalOptions="FillAndExpand" x:Name="memo" Text="{Binding Text}"/>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
             <Label Text="金額" VerticalTextAlignment="Center"/>
-            <Entry  HorizontalOptions="FillAndExpand" x:Name="price" Text="100" Keyboard="Numeric"/>
+            <Entry  HorizontalOptions="FillAndExpand" x:Name="price" Text="{Binding Price}" Keyboard="Numeric"/>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
-            <Button Text="追加" x:Name="Add" Clicked="AddClicked" HorizontalOptions="Start" />
+            <Button Text="追加" x:Name="Add" Command="{Binding Add}" HorizontalOptions="Start" />
             <Label Text="合計:" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand"/>
-            <Label x:Name="Sum" VerticalTextAlignment="Center" />
+            <Label x:Name="Sum" Text="{Binding SumPrice}" VerticalTextAlignment="Center" />
         </StackLayout>
         
         <Label Text="データ一覧" BackgroundColor="Silver"  HorizontalTextAlignment="Center"/>
