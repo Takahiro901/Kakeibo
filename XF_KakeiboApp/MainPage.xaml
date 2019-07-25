@@ -44,11 +44,23 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="{Binding Date, StringFormat='{0:yyy/MM/dd}'}" HorizontalOptions="FillAndExpand"/>
-                            <Label Text="{Binding Himoku}" HorizontalOptions="FillAndExpand"/>
-                            <Label Text="{Binding Price}" HorizontalOptions="FillAndExpand"/>
-                        </StackLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                        
+                            <Label Text="{Binding Date, StringFormat='{0:yyy/MM/dd}'}" HorizontalOptions="FillAndExpand"
+                                   Grid.Column="0" />
+                            <Label Text="{Binding Himoku}" HorizontalOptions="FillAndExpand"
+                                   Grid.Column="1" />
+                            <Label Text="{Binding Price}" HorizontalOptions="FillAndExpand"
+                                   Grid.Column="2" />
+                        </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
