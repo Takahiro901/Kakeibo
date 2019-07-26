@@ -33,16 +33,29 @@ namespace XF_KakeiboApp
                 await SumSet();
             });
 
+            AllDel = new Command(async () =>
+            {
+                await App.Database.DeleteAllItemsAsync();
+                Kakeibos = await App.Database.GetItemsAsync();
+            });
+
             Date = DateTime.Now;
         }
 
+
+        //メソッド
         public async Task SumSet()
         {
             var sum = await App.Database.GetSumAsync();
             SumPrice = sum.ToString();
         }
 
+
+
+        //プロパティ
         public Command Add { get;}
+
+        public Command AllDel { get; }
 
         public List<string> Kindlist { get { return Kind.list; } }
 

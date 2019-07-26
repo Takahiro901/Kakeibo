@@ -9,7 +9,7 @@
     </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="全削除"
-                     Clicked="AllDel" />
+                     Command="{Binding AllDel}" />
     </ContentPage.ToolbarItems>
     <StackLayout>
         <StackLayout Orientation="Horizontal">
