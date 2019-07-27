@@ -35,8 +35,14 @@
         </StackLayout>
         <StackLayout Orientation="Horizontal">
             <Button Text="追加" x:Name="Add" Command="{Binding Add}" HorizontalOptions="Start" />
-            <Label Text="合計:" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand"/>
-            <Label x:Name="Sum" Text="{Binding SumPrice}" VerticalTextAlignment="Center" />
+            <Grid HorizontalOptions="EndAndExpand" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45"/>
+                    <ColumnDefinition Width="60"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="合計:" VerticalTextAlignment="Center" HorizontalOptions="End" Grid.Column="0" />
+                <Label x:Name="Sum" Text="{Binding SumPrice}" VerticalTextAlignment="Center" Grid.Column="1" HorizontalTextAlignment="Center" />
+            </Grid>
         </StackLayout>
         
         <Label Text="データ一覧" BackgroundColor="Silver"  HorizontalTextAlignment="Center"/>
