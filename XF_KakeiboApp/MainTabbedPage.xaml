@@ -3,7 +3,6 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:XF_KakeiboApp;assembly=XF_KakeiboApp"
             x:Class="XF_KakeiboApp.MainTabbedPage">
-    <!--Pages can be added as references or inline-->
-    <ContentPage Title="登録画面"/>     
+    <local:MainPage/>     
     <ContentPage Title="集計" />
 </TabbedPage>
