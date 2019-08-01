@@ -4,5 +4,5 @@
             xmlns:local="clr-namespace:XF_KakeiboApp;assembly=XF_KakeiboApp"
             x:Class="XF_KakeiboApp.MainTabbedPage">
     <local:MainPage/>     
-    <ContentPage Title="集計" />
+    <local:SumPage/>
 </TabbedPage>

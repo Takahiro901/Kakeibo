@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF_KakeiboApp.SumPage"
+             xmlns:local="clr-namespace:XF_KakeiboApp"
+             Title="集計画面">
+    <ContentPage.BindingContext>
+        <local:SumPageViewModel/>
+    </ContentPage.BindingContext>
+    <ListView x:Name="MyListView" ItemsSource="{Binding Items}"
+              CachingStrategy="RecycleElement">
+       <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout>
+                <Label Text="{Binding Text}" />
+                <Label Text="{Binding Detail}" />
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
