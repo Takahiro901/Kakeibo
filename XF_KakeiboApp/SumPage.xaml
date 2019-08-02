@@ -7,17 +7,20 @@
     <ContentPage.BindingContext>
         <local:SumPageViewModel/>
     </ContentPage.BindingContext>
-    <ListView x:Name="MyListView" ItemsSource="{Binding Items}"
+    <StackLayout>
+        <Label Text="合計値" BackgroundColor="gray" TextColor="white" HorizontalTextAlignment="Center"/>
+         <ListView x:Name="MyListView" ItemsSource="{Binding Items}"
               CachingStrategy="RecycleElement">
-       <ListView.ItemTemplate>
-          <DataTemplate>
-            <ViewCell>
-              <StackLayout>
-                <Label Text="{Binding Text}" />
-                <Label Text="{Binding Detail}" />
-              </StackLayout>
-            </ViewCell>
-          </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+           <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Text}" />
+                            <Label Text="{Binding Detail}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>
