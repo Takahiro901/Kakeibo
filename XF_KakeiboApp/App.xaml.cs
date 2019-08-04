@@ -15,7 +15,8 @@ namespace XF_KakeiboApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage()) ;
+            //MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainTabbedPage());
         }
 
         public static KakeiboDatabase Database

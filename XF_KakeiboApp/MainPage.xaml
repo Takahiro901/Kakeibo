@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:XF_KakeiboApp" 
              x:Class="XF_KakeiboApp.MainPage"
-             Appearing="Handle_Appearing">
+             Appearing="Handle_Appearing"
+             Title="登録画面">
     <ContentPage.BindingContext>
         <local:MainPageViewModel x:Name="mainPageViewModel"/>
     </ContentPage.BindingContext>
