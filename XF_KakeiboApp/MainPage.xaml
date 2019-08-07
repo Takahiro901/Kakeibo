@@ -13,6 +13,7 @@
                      Command="{Binding AllDel}" />
     </ContentPage.ToolbarItems>
     <StackLayout>
+        <Label Text="家計簿" TextColor="white" FontSize="20" FontAttributes="Bold" BackgroundColor="blue" HorizontalTextAlignment="Center"/>
         <StackLayout Orientation="Horizontal">
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <Label Text="日付" VerticalTextAlignment="Center"/>
