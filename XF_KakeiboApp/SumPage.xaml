@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XF_KakeiboApp.SumPage"
              xmlns:local="clr-namespace:XF_KakeiboApp"
-             Title="集計画面">
+             Title="集計画面"
+             Appearing="HandleAppearing">
     <ContentPage.BindingContext>
-        <local:SumPageViewModel/>
+        <local:SumPageViewModel x:Name="sumPageViewModel"/>
     </ContentPage.BindingContext>
     <StackLayout>
         <Label Text="合計値" BackgroundColor="gray" TextColor="white" HorizontalTextAlignment="Center"/>
@@ -15,8 +16,8 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout>
-                            <Label Text="{Binding Text}" />
-                            <Label Text="{Binding Detail}" />
+                            <Label Text="{Binding Himoku}" />
+                            <Label Text="{Binding Sum}" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

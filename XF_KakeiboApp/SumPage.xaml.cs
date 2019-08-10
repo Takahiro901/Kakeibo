@@ -16,5 +16,10 @@ namespace XF_KakeiboApp
         {
             InitializeComponent();
         }
+
+        async void HandleAppearing(Object sender, EventArgs e)
+        {
+            await sumPageViewModel.GetSumAsync();
+        }
     }
 }
