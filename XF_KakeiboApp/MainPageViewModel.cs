@@ -39,6 +39,14 @@ namespace XF_KakeiboApp
                 Kakeibos = await App.Database.GetItemsAsync();
             });
 
+            EditMode = new Command(() =>
+            {
+                foreach(var item in Kakeibos)
+                {
+                    item.IsEditMode = !item.IsEditMode;
+                }
+            });
+
             Date = DateTime.Now;
         }
 
@@ -56,6 +64,8 @@ namespace XF_KakeiboApp
         public Command Add { get;}
 
         public Command AllDel { get; }
+
+        public Command EditMode { get; }
 
         public List<string> Kindlist { get { return Kind.list; } }
 
@@ -139,6 +149,20 @@ namespace XF_KakeiboApp
                 {
                     price = value;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Price)));
+                }
+            }
+        }
+
+        private bool selected;
+        public bool Selected
+        {
+            get { return selected; }
+            set
+            {
+                if (selected != value)
+                {
+                    selected = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Selected)));
                 }
             }
         }

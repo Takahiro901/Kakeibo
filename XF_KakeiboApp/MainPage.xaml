@@ -48,6 +48,8 @@
         </StackLayout>
         
         <Label Text="データ一覧" BackgroundColor="Silver"  HorizontalTextAlignment="Center"/>
+        <Button Text="選択削除" HorizontalOptions="End" HeightRequest="30"
+                Command="{Binding EditMode}"/>
         <ListView x:Name="listview" ItemTapped="listviewTapped" ItemsSource="{Binding Kakeibos}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -57,17 +59,18 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                        
+                            <CheckBox IsVisible="{Binding IsEditMode}"/>
                             <Label Text="{Binding Date, StringFormat='{0:yyy/MM/dd}'}" HorizontalOptions="FillAndExpand"
-                                   Grid.Column="0" />
-                            <Label Text="{Binding Himoku}" HorizontalOptions="FillAndExpand"
                                    Grid.Column="1" />
-                            <Label Text="{Binding Price}" HorizontalOptions="FillAndExpand"
+                            <Label Text="{Binding Himoku}" HorizontalOptions="FillAndExpand"
                                    Grid.Column="2" />
+                            <Label Text="{Binding Price}" HorizontalOptions="FillAndExpand"
+                                   Grid.Column="3" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
