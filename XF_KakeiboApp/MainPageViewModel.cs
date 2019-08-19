@@ -14,6 +14,8 @@ namespace XF_KakeiboApp
 
         public MainPageViewModel()
         {
+            SelectDelLetter = "選択削除";
+
             Add = new Command(async () =>
             {
                 var item = new Kakeibo
@@ -41,10 +43,17 @@ namespace XF_KakeiboApp
 
             EditMode = new Command(() =>
             {
+                this.IsEditMode = !this.IsEditMode;
+
                 foreach(var item in Kakeibos)
                 {
-                    item.IsEditMode = !item.IsEditMode;
+                    item.IsEditMode = this.IsEditMode;
                 }
+
+                if (this.IsEditMode)
+                    SelectDelLetter = "戻る";
+                else
+                    SelectDelLetter = "選択削除";
             });
 
             Date = DateTime.Now;
@@ -177,6 +186,34 @@ namespace XF_KakeiboApp
                 {
                     sumPrice = value;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SumPrice)));
+                }
+            }
+        }
+
+        private bool isEditMode;
+        public bool IsEditMode
+        {
+            get { return isEditMode; }
+            set
+            {
+                if (isEditMode != value)
+                {
+                    isEditMode = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsEditMode)));
+                }
+            }
+        }
+
+        private string selectDelLetter;
+        public string SelectDelLetter
+        {
+            get { return selectDelLetter; }
+            set
+            {
+                if (selectDelLetter != value)
+                {
+                    selectDelLetter = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectDelLetter)));
                 }
             }
         }

@@ -48,7 +48,7 @@
         </StackLayout>
         
         <Label Text="データ一覧" BackgroundColor="Silver"  HorizontalTextAlignment="Center"/>
-        <Button Text="選択削除" HorizontalOptions="End" HeightRequest="30"
+        <Button Text="{Binding SelectDelLetter}" HorizontalOptions="End" HeightRequest="30"
                 Command="{Binding EditMode}"/>
         <ListView x:Name="listview" ItemTapped="listviewTapped" ItemsSource="{Binding Kakeibos}">
             <ListView.ItemTemplate>
