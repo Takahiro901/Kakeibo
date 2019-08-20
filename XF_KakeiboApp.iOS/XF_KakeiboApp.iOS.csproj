@@ -161,4 +161,7 @@
       <Name>XF_KakeiboApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\PlusIcon.png" />
+  </ItemGroup>
 </Project>
