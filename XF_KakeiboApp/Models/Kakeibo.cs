@@ -15,6 +15,20 @@ namespace XF_KakeiboApp.Models
         public string Memo { get; set; }
         public int Price { get; set; }
 
+        public bool isChecked;
+        public bool IsChecked
+        {
+            get { return isChecked; }
+            set
+            {
+                if (isChecked != value)
+                {
+                    isChecked = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsChecked)));
+                }
+            }
+        }
+
         private bool isEditMode;
         public bool IsEditMode
         {

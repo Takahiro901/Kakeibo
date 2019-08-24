@@ -43,17 +43,25 @@ namespace XF_KakeiboApp
 
             EditMode = new Command(() =>
             {
-                this.IsEditMode = !this.IsEditMode;
-
-                foreach(var item in Kakeibos)
-                {
-                    item.IsEditMode = this.IsEditMode;
-                }
+                this.IsEditMode = !this.IsEditMode;                
 
                 if (this.IsEditMode)
+                {
+                    foreach (var item in Kakeibos)
+                    {
+                        item.IsEditMode = this.IsEditMode;
+                    }
                     SelectDelLetter = "戻る";
+                }
                 else
+                {
+                    foreach (var item in Kakeibos)
+                    {
+                        item.IsEditMode = this.IsEditMode;
+                        item.IsChecked = false;
+                    }
                     SelectDelLetter = "選択削除";
+                }
             });
 
             Date = DateTime.Now;

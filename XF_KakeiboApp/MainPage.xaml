@@ -64,7 +64,7 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <CheckBox IsVisible="{Binding IsEditMode}"/>
+                            <CheckBox IsVisible="{Binding IsEditMode}" IsChecked="{Binding IsChecked}"/>
                             <Label Text="{Binding Date, StringFormat='{0:yyy/MM/dd}'}" HorizontalOptions="FillAndExpand"
                                    Grid.Column="1" />
                             <Label Text="{Binding Himoku}" HorizontalOptions="FillAndExpand"
