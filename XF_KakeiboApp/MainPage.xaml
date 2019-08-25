@@ -48,8 +48,12 @@
         </StackLayout>
         
         <Label Text="データ一覧" BackgroundColor="Silver"  HorizontalTextAlignment="Center"/>
-        <Button Text="{Binding SelectDelLetter}" HorizontalOptions="End" HeightRequest="40"
+        <StackLayout Orientation="Horizontal">
+            <Button Text="削除" HeightRequest="40" IsVisible="{Binding IsEditMode}"/>
+            <Button Text="{Binding SelectDelLetter}" HorizontalOptions="EndAndExpand" HeightRequest="40"
                 Command="{Binding EditMode}"/>
+
+        </StackLayout>
         <ListView x:Name="listview" ItemTapped="listviewTapped" ItemsSource="{Binding Kakeibos}">
             <ListView.ItemTemplate>
                 <DataTemplate>
