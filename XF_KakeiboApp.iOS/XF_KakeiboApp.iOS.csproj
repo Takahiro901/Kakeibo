@@ -163,5 +163,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\PlusIcon.png" />
+    <BundleResource Include="Resources\SumIcon.png" />
   </ItemGroup>
 </Project>

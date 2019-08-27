@@ -6,5 +6,5 @@
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom">
     <local:MainPage IconImageSource="PlusIcon.png"/>     
-    <local:SumPage/>
+    <local:SumPage IconImageSource="SumIcon.png"/>
 </TabbedPage>
