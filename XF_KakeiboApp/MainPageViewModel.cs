@@ -39,6 +39,7 @@ namespace XF_KakeiboApp
             {
                 await App.Database.DeleteAllItemsAsync();
                 Kakeibos = await App.Database.GetItemsAsync();
+                await SumSet();
             });
 
             EditMode = new Command(() =>
